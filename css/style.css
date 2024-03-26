@@ -84,7 +84,7 @@ header {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion) {
   #logo {
     animation: none;
     width: 475px;
