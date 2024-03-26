@@ -5,33 +5,37 @@ body {
 }
 
 @keyframes logoanim {
-  0% {
-    width: 25px;
-    opacity: 0;
-  }
-
   100% {
     width: 475px;
+    /*the end width - when its finished loading*/
     opacity: 1;
+    /*makes the image visible*/
   }
 }
 
 #logo {
   width: 25px;
+  /*initalizes image width*/
   opacity: 0;
+  /*sets the image to not be visible*/
   animation: logoanim 5s forwards;
+  /*loads the image within 5s and only when the page loads*/
 }
 
 header {
   display: flex;
   align-items: center;
+  /*vertically aligns the items within the flex box in the center*/
   justify-content: center;
+  /*horizontally aligns the items within the flex box in the center*/
   flex-direction: column;
+  /*provides the look where the logo and nav_links are stacked on top of eachother*/
 }
 
 .nav_links {
   display: flex;
   flex-direction: column;
+  /*stacks the links on top of eachother*/
 }
 
 .card>header {
@@ -44,6 +48,8 @@ header {
 
 .card {
   flex-basis: 450px;
+  /*sets the intialize size to 450px*/
+  /*remove the white parts that are part of the picture by rounding the left and right corners*/
   border-top-left-radius: 51px;
   border-top-right-radius: 51px;
 }
@@ -51,8 +57,11 @@ header {
 .pricing {
   display: flex;
   align-items: center;
+  /*vertically aligns*/
   justify-content: center;
+  /*horizontally aligns*/
   flex-wrap: wrap;
+  /*allows the cards to not all be cramped in a given space and wrap around - creating that vertical look*/
 }
 
 .gallery img {
@@ -66,11 +75,11 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  /*creates the items in the container to be the same height*/
 }
 
 @media only screen and (min-width: 900px) {
   header {
-    display: flex;
     justify-content: space-between;
     flex-direction: row;
   }
@@ -87,8 +96,11 @@ header {
 @media (prefers-reduced-motion) {
   #logo {
     animation: none;
+    /*removes animation*/
     width: 475px;
+    /* provides */
     opacity: 1;
+    /*shows the logo*/
   }
 }
 
@@ -100,23 +112,30 @@ header {
 
   .nav_links {
     flex-direction: row;
+    /*links are side by side*/
     justify-content: space-around;
+    /* provides the links distance*/
     gap: 193px;
+    /*overrides the align-items - bc that causes it to not have spacing*/
   }
 
   .pricing {
-    display: flex;
     flex-wrap: nowrap;
+    /*forces it to be in all in one line*/
     flex-direction: row;
+    /*aligns it horizontally*/
     justify-content: center;
     align-items: flex-end;
+    /*aligns things to the bottom*/
   }
 
   .card {
     flex: 1 1 325px;
+    /*sets the flex-basis to 325px, and accounts for the flex-grow and flex-shrink*/
     border: 2px solid #45ADDD;
   }
 
+  /*takes off the gallery*/
   .gallery {
     display: none;
   }
